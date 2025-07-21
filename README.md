@@ -1,5 +1,5 @@
 # SoGreeno i3 Dotfiles
-**Barely updated. Ill make a install script when i feel like it.**
+**Barely updated. Ill make a install script when i feel like it.** <br>
 *Yes, the Rain World wallpaper was obligatory.*
 - Terminal: `kitty`
 - Compositor: `picom`
