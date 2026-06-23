@@ -21,11 +21,10 @@
 #workspaces,
 #custom-uptime
 {
-  background-color: #2d2d2d;
+  background-color: rgba(25,25,25,0.7);
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
   border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   min-width: 0;
   border: none;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -64,7 +63,7 @@
 /* --- Center Module --- */
 #clock {
   color: #ffffff;
-  background-color: #2d2d2d;
+  background-color: rgba(25,25,25,0.7);
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
   border-radius: 6px;
@@ -74,7 +73,7 @@
 
 /* Pomodoro Module */
 #custom-pomodoro {
-  background-color: #2d2d2d;
+  background-color: rgba(45,45,45,0.5);
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
   border-radius: 6px;
@@ -101,10 +100,10 @@
 #network,
 #custom-lock,
 #battery {
-  background-color: #2d2d2d;
+  background-color: rgba(25,25,25,0.7);
   padding: 0.3rem 0.7rem;
   margin: 5px 0px;
-  border-radius: 0;
+  border-radius: 0px;
   box-shadow: none;
   min-width: 0;
   border: none;
@@ -117,7 +116,15 @@
   border-bottom-left-radius: 6px;
 }
 
+/* 
 #battery {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 7px;
+} 
+*/
+
+#pulseaudio {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   margin-right: 7px;
