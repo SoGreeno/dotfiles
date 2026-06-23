@@ -21,7 +21,7 @@ set $menu wofi
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/sg/Pictures/Metropolis.png fill
 #
 # Example configuration:
 #
@@ -53,9 +53,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #       middle_emulation enabled
 #   }
 #
-#   input type:keyboard {
-#       xkb_layout "eu"
-#   }
+   input type:keyboard {
+       xkb_layout "pl"
+   }
 #
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
@@ -81,7 +81,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -219,5 +219,6 @@ bindsym $mod+r mode "resize"
     gaps inner 5
     gaps outer 0
     default_border pixel 1
+    client.focused #ffffff #ffffff #ffffff
     
 include /etc/sway/config.d/*
