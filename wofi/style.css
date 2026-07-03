@@ -1,3 +1,7 @@
+* {
+background-color: rgba(0,0,0,0.3);
+}
+
 window {
 margin: 0px;
 border: 1px solid #7A8478;
@@ -7,14 +11,14 @@ background-color: rgba(0,0,0,0.3);
 #input {
 margin: 5px;
 border: none;
-color: #D3C6AA;
+color: rgba(0,120,0,0.5);
 background-color: rgba(0,0,0,0.3);
 }
 
 #inner-box {
 margin: 5px;
 border: none;
-background-color: rgba(0,0,0,0.3);
+background-color: rgba(0,0,0,0.7);
 }
 
 #outer-box {
@@ -31,9 +35,9 @@ border: none;
 #text {
 margin: 5px;
 border: none;
-color: #D3C6AA;
+color: #FFFFFF;
 }
 
 #entry:selected {
-background-color: rgba(190,255,190,0.3);
+background-color: rgba(122,132,120,0.3);
 }
