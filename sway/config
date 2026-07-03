@@ -56,6 +56,10 @@ output * bg /home/sg/Pictures/Metropolis.png fill
    input type:keyboard {
        xkb_layout "pl"
    }
+
+   input type:pointer {
+       left_handed enabled
+   }
 #
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
