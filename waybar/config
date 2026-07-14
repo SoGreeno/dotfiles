@@ -1,90 +1,188 @@
+/* --- Global Styles --- */
+* {
+  font-family: "SF Pro Text", "Inter", "Segoe UI", "NotoSans Nerd Font",
+    sans-serif;
+  font-size: 13px;
+  min-height: 0;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 3px;
+}
+
+/* --- Waybar Container --- */
+#waybar {
+  background: transparent;
+  color: #2d2d2d;
+  margin: 0px;
+  font-weight: 500;
+}
+
+/* --- Left Modules --- */
+#workspaces,
+#custom-uptime
 {
-  "layer": "top",
-  "position": "top",
-  "margin-bottom": -10,
-  "spacing": 0,
-  "modules-left": [
-    "sway/workspaces",
-    "custom/uptime"
-  ],
-  "modules-center": [
-    "clock"
-  ],
-  "modules-right": [
-    "custom/pomodoro",
-    "bluetooth",
-    "network",
-    "pulseaudio",
-    "battery"
-  ],
-  "sway/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": true,
-    "format": "{name}"
-  },
-  "bluetooth": {
-    "format": "󰂲",
-    "format-on": "{icon}",
-    "format-off": "{icon}",
-    "format-connected": "{icon}",
-    "format-icons": {
-      "on": "󰂯",
-      "off": "󰂲",
-      "connected": "󰂱"
-    },
-    "on-click": "blueman-manager",
-    "tooltip-format-connected": "{device_enumerate}"
-  },
-  "clock": {
-    "timezone": "Europe/Warsaw",
-    "tooltip": false,
-    "format": "{:%H:%M:%S  -  %A, %d}",
-    "interval": 1
-  },
-  "network": {
-    "format-wifi": "󰤢",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤠 ",
-    "interval": 5,
-    "tooltip-format": "{signalStrength%",
-    "on-click": "nm-connection-editor"
-  },
-  "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-muted": "",
-    "format-icons": {
-      "default": [
-        "",
-        "",
-        " "
-      ]
-    },
-    "on-click": "pavucontrol"
-  },
-  "battery": {
-    "interval": 2,
-    "states": {
-      "warning": 20,
-      "critical": 10
-    },
-    "format": "{icon}  {capacity}%",
-    "format-full": "{icon}  {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{icon} {time}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "custom/pomodoro": {
-    "format": "{}",
-    "return-type": "json",
-    "exec": "waybar-module-pomodoro --no-work-icons",
-    "on-click": "waybar-module-pomodoro toggle",
-    "on-click-right": "waybar-module-pomodoro reset"
-  }
+  background-color: rgba(25,25,25,0.7);
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 6px;
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#workspaces {
+  padding: 2px;
+  margin-left: 7px;
+  margin-right: 5px;
+}
+
+#custom-uptime {
+  margin-right: 5px;
+}
+
+#workspaces button {
+  color: #d1d1d1;
+  border-radius: 5px;
+  padding: 0.3rem 0.6rem;
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
+}
+
+#workspaces button.focused {
+  color: #ffffff;
+  background-color: #5d5d5d;
+}
+
+#workspaces button.urgent {
+  color: #ffffff;
+  background-color: #ff5d5d;
+}
+
+/* --- Center Module --- */
+#clock {
+  color: #ffffff;
+  background-color: rgba(25,25,25,0.7);
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 6px;
+  min-width: 0;
+  border: none;
+}
+
+/* Pomodoro Module */
+#custom-pomodoro {
+  background-color: rgba(45,45,45,0.5);
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 6px;
+  min-width: 0;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-weight: 600;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#custom-pomodoro.work,
+#custom-pomodoro.break {
+  color: #ffffff;
+  background-color: #ffffff;
+  outline: none;
+}
+
+/* --- Right Modules --- */
+#bluetooth,
+#pulseaudio,
+#backlight,
+#network,
+#custom-lock,
+#battery {
+  background-color: rgba(25,25,25,0.7);
+  padding: 0.3rem 0.7rem;
+  margin: 5px 0px;
+  border-radius: 0px;
+  box-shadow: none;
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#bluetooth {
+  margin-left: 0px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+/* 
+#battery {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 7px;
+} 
+*/
+
+#pulseaudio {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 7px;
+}
+
+/* --- Colors --- */
+#custom-uptime {
+  color: #babbf1;
+}
+#cpu {
+  color: #c6d0f5;
+}
+#clock {
+  color: #ffffff;
+  font-weight: 500;
+}
+#pulseaudio {
+  color: #ffffff;
+}
+#backlight {
+  color: #ffffff;
+}
+#network {
+  color: #ffffff;
+}
+#network.disconnected {
+  color: #e78284;
+}
+#custom-lock {
+  color: #babbf1;
+}
+#bluetooth {
+  color: #ffffff;
+  font-size: 16px;
+}
+#bluetooth.on {
+  color: #ffffff;
+}
+#bluetooth.connected {
+  color: #ffffff;
+}
+#battery {
+  color: #ffffff;
+}
+#battery.charging {
+  color: #ffffff;
+}
+#battery.warning:not(.charging) {
+  color: #ffffff;
+}
+
+/* --- Tooltip Styles --- */
+tooltip {
+  background-color: #2d2d2d;
+  color: #2d2d2d;
+  padding: 5px 12px;
+  margin: 2px 0px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
 }
