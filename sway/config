@@ -25,7 +25,8 @@ output * bg /home/sg/Pictures/Metropolis.png fill
 #
 # Example configuration:
 #
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+   output DP-1 resolution 1920x1080 position 0,0
+   output HDMI-A-1 resolution 1920x1080 position 0,1080
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -33,10 +34,10 @@ output * bg /home/sg/Pictures/Metropolis.png fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -213,8 +214,8 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym $mod+P exec grim
-
+    bindsym $mod+P exec grim -t jpeg -q 50 - | wl-copy 
+    bindsym $mod+Shift+P exec grim -t jpeg -q 50 -g "$(slurp)" - | wl-copy
     bar {
 	swaybar_command waybar
     }
